@@ -2,8 +2,8 @@ import { createStore, applyMiddleware } from 'redux';
 
 import thunk from 'redux-thunk';
 
-import cheeseReducer from './reducers/cheese';
+import kardReducer from './reducers/kard';
 
-const store = createStore(cheeseReducer, applyMiddleware(thunk));
+const store = createStore(kardReducer, applyMiddleware(thunk));
 
 export default store;

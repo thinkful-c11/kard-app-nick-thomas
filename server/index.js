@@ -1,30 +1,23 @@
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const { Kard } = require('./model');
 
 const app = express();
 
+app.use(bodyParser.json());
+mongoose.Promise = global.Promise;
+
+
+
+const kardData = {
+  userName: 'something'
+};
 // API endpoints go here!
 
-app.get('/api/cheeses', (req, res) => {
-  return res.json([
-    'Bath Blue',
-    'Barkham Blue',
-    'Buxton Blue',
-    'Cheshire Blue',
-    'Devon Blue',
-    'Dorset Blue Vinney',
-    'Dovedale',
-    'Exmoor Blue',
-    'Harbourne Blue',
-    'Lanark Blue',
-    'Lymeswold',
-    'Oxford Blue',
-    'Shropshire Blue',
-    'Stichelton',
-    'Stilton',
-    'Blue Wensleydale',
-    'Yorkshire Blue'
-  ]);
+app.get('/api/kard', (req, res) => {
+  return res.json(kardData);
 });
 
 // Serve the built client

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import CheeseList from './components/CheeseList';
+import Kard from './components/Kard';
 import store from './store';
 import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
-    <CheeseList />
+    <Kard />
   </Provider>,
   document.getElementById('root')
 );
