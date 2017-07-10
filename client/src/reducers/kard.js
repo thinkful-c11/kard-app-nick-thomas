@@ -3,7 +3,7 @@ import * as actions from '../actions/kard';
 const initialState={
   loading: false,
   error: null,
-  userName: 'User Name'
+  kard: {}
 };
 
 const kardReducer=(state = initialState, action) => {
@@ -13,9 +13,9 @@ const kardReducer=(state = initialState, action) => {
     });
   }
   else if(action.type === actions.FETCH_KARD_SUCCESS){
-    console.log('???', action);
+    // console.log('???', action);
     return Object.assign({}, state, {
-      userName: action.kard.userName,
+      kard: action.kard,
       loading: false,
       error: null
     });

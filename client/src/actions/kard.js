@@ -23,8 +23,7 @@ export const fetchKard = () => dispatch => {
     }
     return res.json();
   }).then(kard => {
-    console.log(kard);
-    dispatch(fetchKardSuccess(kard));
+    dispatch(fetchKardSuccess(kard[0]));
   }).catch(err => {
     dispatch(fetchKardError(err));
   });
