@@ -4,7 +4,6 @@ import './KardForm.css';
 
 export class CheckboxContainer extends React.Component {
   render () {
-    // console.log(this.props.kard);
     let checkBoxes;
     switch (this.props.type) {
     case 'contact':
@@ -20,7 +19,6 @@ export class CheckboxContainer extends React.Component {
       checkBoxes = 'Fill this in later';
     }
 
-    console.log(checkBoxes);
     const data = checkBoxes.map((checkBox, index) => {
       return (
         <div className='check-container'>
@@ -40,7 +38,6 @@ export class CheckboxContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state);
   return {
     kard: state.kard,
   };
