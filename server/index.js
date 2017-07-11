@@ -10,11 +10,6 @@ const app = express();
 app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 
-
-
-// const kardData = {
-//   userName: 'something'
-// };
 // API endpoints go here!
 
 app.get('/api/kard', (req, res) => {
@@ -22,7 +17,6 @@ app.get('/api/kard', (req, res) => {
     .find()
     .exec()
     .then(response => {
-      console.log(response);
       res.status(200).json(response);
     })
     .catch(err => {

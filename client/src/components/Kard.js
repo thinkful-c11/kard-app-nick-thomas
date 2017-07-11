@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions/kard';
 
-export class Kard extends React.Component{
+export class Kard extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(actions.fetchKard());
@@ -12,17 +12,15 @@ export class Kard extends React.Component{
   render(){
     return (
       <div className=''>
-        Text
-        <p>{this.props.userName}</p>
+        <p>{this.props.kard.userName}</p>
       </div>);
   }
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     loading: state.loading,
-    userName: state.userName,
+    kard: state.kard,
     error: state.error
   };
 };
