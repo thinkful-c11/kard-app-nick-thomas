@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import KardForm from './KardForm';
+
 import * as actions from '../actions/kard';
 
 export class Kard extends React.Component {
@@ -9,11 +11,10 @@ export class Kard extends React.Component {
     this.props.dispatch(actions.fetchKard());
   }
 
-  render(){
+  render() {
     return (
-      <div className=''>
-        <p>{this.props.kard.userName}</p>
-      </div>);
+      <KardForm />
+    );
   }
 }
 

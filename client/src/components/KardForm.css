@@ -1,0 +1,29 @@
+input, select, button, label {
+  width: 100%;
+  height: 30px;
+}
+
+.kard-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.kard-form {
+  padding-top: 20px;
+}
+
+.kard-fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
