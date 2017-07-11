@@ -7,14 +7,30 @@ const userToCreate = {
   password: 'password',
   firstName: 'Steve',
   lastName: 'Perry',
-  email: 'steve@steveperry.com',
-  phoneNumber: '5555555555',
-  social: [
+  contact: [
     {
-      facebook: 'facebook.com/steve.perry'
+      type: 'Email',
+      content: 'steve@steveperry.com'
     },
     {
-      gitHub: 'github.com/steveperry'
+      type: 'phoneNumber',
+      content: '5555555555'
+    }
+  ],
+  social: [
+    {
+      type: 'Facebook',
+      content: 'facebook.com/steve.perry'
+    },
+    {
+      type: 'Instagram',
+      content: '@steveperry'
+    }
+  ],
+  work: [
+    {
+      type: 'LinkedIn',
+      content: 'linkedIn.com/steve.perry'
     }
   ]
 };

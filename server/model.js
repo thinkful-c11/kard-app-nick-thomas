@@ -22,14 +22,27 @@ const kardSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  email: {
-    type: String,
-    required: true
-  },
-  phoneNumber: {
-    type: String,
-  },
-  social: [{}],
+  contact: [
+    {}
+    // {
+    //   type: String,
+    //   content: String
+    // },
+  ],
+  social: [
+    {}
+    // {
+    //   type: String,
+    //   content: String
+    // },
+  ],
+  work: [
+    {}
+    // {
+    //   type: String,
+    //   content: String
+    // }
+  ]
 });
 
 const Kard = mongoose.model('Kard', kardSchema);

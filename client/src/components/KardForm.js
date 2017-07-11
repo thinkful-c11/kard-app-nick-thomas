@@ -1,6 +1,8 @@
 import React from 'react';
 import './KardForm.css';
 
+import CheckboxContainer from './CheckboxContainer';
+
 export default class KardForm extends React.Component {
   render () {
     return (
@@ -15,21 +17,8 @@ export default class KardForm extends React.Component {
             <input type='text' id='send-input' placeholder='Email address' />
 
             <CheckboxContainer type='contact' />
-
-            <div  className='social-container'>
-              <div className='check-container'>
-                <input type='checkbox' id='facebook-check' />
-                <label htmlFor='facebook-check'>
-                  Facebook
-                </label>
-              </div>
-              <div className='check-container'>
-                <input type='checkbox' id='instagram-check' />
-                <label htmlFor='instagram-check'>
-                  Instagram
-                </label>
-              </div>
-            </div>
+            <CheckboxContainer type='social' />
+            <CheckboxContainer type='work' />
 
             <button type='submit' className='send-button'>Send</button>
           </fieldset>

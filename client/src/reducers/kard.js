@@ -6,21 +6,20 @@ const initialState={
   kard: {}
 };
 
-const kardReducer=(state = initialState, action) => {
-  if(action.type===actions.FETCH_KARD_REQUEST){
+const kardReducer = (state = initialState, action) => {
+  if (action.type === actions.FETCH_KARD_REQUEST) {
     return Object.assign({}, state, {
       loading: true
     });
   }
-  else if(action.type === actions.FETCH_KARD_SUCCESS){
-    // console.log('???', action);
+  else if (action.type === actions.FETCH_KARD_SUCCESS) {
     return Object.assign({}, state, {
       kard: action.kard,
       loading: false,
       error: null
     });
   }
-  else if(action.type===actions.FETCH_KARD_ERROR){
+  else if (action.type === actions.FETCH_KARD_ERROR) {
     return Object.assign({}, state, {
       loading: false,
       error: action.error
