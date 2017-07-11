@@ -21,8 +21,8 @@ export class CheckboxContainer extends React.Component {
 
     const data = checkBoxes.map((checkBox, index) => {
       return (
-        <div className='check-container'>
-          <input type='checkbox' key={index} id={checkBox.type} />
+        <div className='check-container' key={this.props.type + index}>
+          <input type='checkbox' id={checkBox.type} />
           <label htmlFor={checkBox.type}>
             {checkBox.type}
           </label>

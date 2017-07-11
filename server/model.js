@@ -24,24 +24,12 @@ const kardSchema = mongoose.Schema({
   },
   contact: [
     {}
-    // {
-    //   type: String,
-    //   content: String
-    // },
   ],
   social: [
     {}
-    // {
-    //   type: String,
-    //   content: String
-    // },
   ],
   work: [
     {}
-    // {
-    //   type: String,
-    //   content: String
-    // }
   ]
 });
 
