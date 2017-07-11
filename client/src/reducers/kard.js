@@ -3,7 +3,11 @@ import * as actions from '../actions/kard';
 const initialState={
   loading: false,
   error: null,
-  kard: {}
+  kard: {
+    contact: [],
+    social: [],
+    work: []
+  }
 };
 
 const kardReducer = (state = initialState, action) => {

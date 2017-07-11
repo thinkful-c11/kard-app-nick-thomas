@@ -20,7 +20,10 @@ export default class KardForm extends React.Component {
             <CheckboxContainer type='social' />
             <CheckboxContainer type='work' />
 
-            <button type='submit' className='send-button'>Send</button>
+            <button type='submit' className='send-button'>
+              <a
+                href='mailto:tckastanek@gmail.com'>Send!</a>
+            </button>
           </fieldset>
         </form>
       </div>
