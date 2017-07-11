@@ -14,26 +14,7 @@ export default class KardForm extends React.Component {
             </label>
             <input type='text' id='send-input' placeholder='Email address' />
 
-            <div className='contact-container'>
-              <div className='check-container'>
-                <input type='checkbox' id='contact-email' />
-                <label htmlFor='contact-email'>
-                  Email
-                </label>
-              </div>
-              <div  className='check-container'>
-                <input type='checkbox' id='contact-phone' />
-                <label htmlFor='contact-phone'>
-                  Phone
-                </label>
-              </div>
-              <div className='check-container'>
-                <input type='checkbox' id='contact-address' />
-                <label htmlFor='contact-address'>
-                  Address
-                </label>
-              </div>
-            </div>
+            <CheckboxContainer type='contact' />
 
             <div  className='social-container'>
               <div className='check-container'>
