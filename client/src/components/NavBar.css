@@ -1,0 +1,15 @@
+.nav-bar {
+  height: 40px;
+}
+
+nav {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+a {
+  padding: 15px 15px 0 0;
+  text-decoration: none;
+}

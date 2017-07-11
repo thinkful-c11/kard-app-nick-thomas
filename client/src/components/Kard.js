@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import KardForm from './KardForm';
+import NavBar from './NavBar';
 
 import * as actions from '../actions/kard';
 
@@ -13,7 +14,10 @@ export class Kard extends React.Component {
 
   render() {
     return (
-      <KardForm />
+      <div>
+        <NavBar />
+        <KardForm />
+      </div>
     );
   }
 }
