@@ -25,6 +25,14 @@ export default class KardForm extends React.Component {
 
   }
   render () {
+    // const email = () => {
+    //   for (var [key, value] of this.state) {
+    //     // return `${key}: ${value}`;
+    //     console.log(`${key}: ${value}`);
+    //   }
+    // };
+    const email = Object.entries(this.state).toString().split(',');
+    console.log(email);
     return (
       <div className='kard-form-container'>
         <h1>Kard</h1>
@@ -42,7 +50,7 @@ export default class KardForm extends React.Component {
 
             <button type='submit' className='send-button'>
               <a
-                href='mailto:tckastanek@gmail.com'>Send!</a>
+                href={`mailto:tckastanek@gmail.com?subject="Here is my Kard!"&body=${email}`}>Send!</a>
             </button>
           </fieldset>
         </form>
