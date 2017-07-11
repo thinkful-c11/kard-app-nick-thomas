@@ -12,7 +12,6 @@ export default class KardForm extends React.Component {
   handleInputChange(event) {
     const value = event.value;
     const name = event.name;
-    console.log(name in this.state);
 
     if (this.state[name]) {
       this.setState({
