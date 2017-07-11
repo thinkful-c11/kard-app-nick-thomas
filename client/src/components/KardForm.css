@@ -9,6 +9,7 @@ input, select, button, label {
   align-items: center;
   text-align: center;
   font-size: 18px;
+  padding: 10px 0 40px 0;
 }
 
 .profile-img {

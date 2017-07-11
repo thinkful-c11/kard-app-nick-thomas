@@ -6,17 +6,25 @@ export default class KardForm extends React.Component {
     return (
       <div className='kard-form-container'>
         <h1>Kard</h1>
-        <img className='profile-img' src='http://fillmurray.com/200/200' />
+        <img className='profile-img' src='http://fillmurray.com/200/200' alt='Profile' />
         <form className='kard-form'>
           <fieldset className='kard-fieldset'>
             <label htmlFor='send-input'>
               Who would you like to send a Kard to?
             </label>
             <input type='text' id='send-input' placeholder='Email address' />
-            <label htmlFor='contact-info'>
-              Contact Info
+            <label htmlFor='contact-email'>
+              Email
             </label>
-            <input type='checkbox' id='contact-info' />
+            <input type='checkbox' id='contact-email' />
+            <label htmlFor='contact-phone'>
+              Phone
+            </label>
+            <input type='checkbox' id='contact-phone' />
+            <label htmlFor='contact-address'>
+              Address
+            </label>
+            <input type='checkbox' id='contact-address' />
             <label htmlFor='social-select'>
               Social
             </label>
