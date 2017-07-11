@@ -13,35 +13,44 @@ export default class KardForm extends React.Component {
               Who would you like to send a Kard to?
             </label>
             <input type='text' id='send-input' placeholder='Email address' />
-            <label htmlFor='contact-email'>
-              Email
-            </label>
-            <input type='checkbox' id='contact-email' />
-            <label htmlFor='contact-phone'>
-              Phone
-            </label>
-            <input type='checkbox' id='contact-phone' />
-            <label htmlFor='contact-address'>
-              Address
-            </label>
-            <input type='checkbox' id='contact-address' />
-            <label htmlFor='social-select'>
-              Social
-            </label>
-            <select id='social-select'>
-              <option value='facebook'>Facebook</option>
-              <option value='instagram'>Instagram</option>
-              <option value='twitter'>Twitter</option>
-            </select>
-            <label htmlFor='business-select'>
-              Business
-            </label>
-            <select id='business-select'>
-              <option value='linkedin'>LinkedIn</option>
-              <option value='portfolio'>Portfolio</option>
-              <option value='resume'>Resume</option>
-            </select>
-            <button type='submit'>Send</button>
+
+            <div className='contact-container'>
+              <div className='check-container'>
+                <input type='checkbox' id='contact-email' />
+                <label htmlFor='contact-email'>
+                  Email
+                </label>
+              </div>
+              <div  className='check-container'>
+                <input type='checkbox' id='contact-phone' />
+                <label htmlFor='contact-phone'>
+                  Phone
+                </label>
+              </div>
+              <div className='check-container'>
+                <input type='checkbox' id='contact-address' />
+                <label htmlFor='contact-address'>
+                  Address
+                </label>
+              </div>
+            </div>
+
+            <div  className='social-container'>
+              <div className='check-container'>
+                <input type='checkbox' id='facebook-check' />
+                <label htmlFor='facebook-check'>
+                  Facebook
+                </label>
+              </div>
+              <div className='check-container'>
+                <input type='checkbox' id='instagram-check' />
+                <label htmlFor='instagram-check'>
+                  Instagram
+                </label>
+              </div>
+            </div>
+
+            <button type='submit' className='send-button'>Send</button>
           </fieldset>
         </form>
       </div>
