@@ -4,6 +4,27 @@ import './KardForm.css';
 import CheckboxContainer from './CheckboxContainer';
 
 export default class KardForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  handleInputChange(event) {
+    const value = event.value;
+    const name = event.name;
+    console.log(name in this.state);
+
+    if (this.state[name]) {
+      this.setState({
+        [name]: undefined
+      });
+    } else {
+      this.setState({
+        [name]: value
+      });
+    }
+
+  }
   render () {
     return (
       <div className='kard-form-container'>
@@ -16,9 +37,9 @@ export default class KardForm extends React.Component {
             </label>
             <input type='text' id='send-input' placeholder='Email address' />
 
-            <CheckboxContainer type='contact' />
-            <CheckboxContainer type='social' />
-            <CheckboxContainer type='work' />
+            <CheckboxContainer type='contact' onChange={(event) => this.handleInputChange(event)} />
+            <CheckboxContainer type='social' onChange={(event) => this.handleInputChange(event)} />
+            <CheckboxContainer type='work' onChange={(event) => this.handleInputChange(event)} />
 
             <button type='submit' className='send-button'>
               <a

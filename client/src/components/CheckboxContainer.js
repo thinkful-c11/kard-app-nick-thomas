@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './KardForm.css';
 
 export class CheckboxContainer extends React.Component {
+
   render () {
     let checkBoxes;
     switch (this.props.type) {
@@ -22,7 +23,7 @@ export class CheckboxContainer extends React.Component {
     const data = checkBoxes.map((checkBox, index) => {
       return (
         <div className='check-container' key={this.props.type + index}>
-          <input type='checkbox' id={checkBox.type} />
+          <input type='checkbox' id={checkBox.type} name={checkBox.type} onChange={e => this.props.onChange(e.currentTarget)} value={checkBox.content} />
           <label htmlFor={checkBox.type}>
             {checkBox.type}
           </label>
