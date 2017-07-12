@@ -36,7 +36,6 @@ export const addItem = (category, type, content, id) => dispatch => {
       type, content
     }
   };
-  console.log(newObj);
   const data = {
     method: 'PUT',
     headers: {
@@ -56,4 +55,33 @@ export const addItem = (category, type, content, id) => dispatch => {
   }).catch(err => {
     dispatch(fetchKardError(err));
   });
+};
+
+export const removeItem = (array, id, category) => dispatch => {
+  dispatch(fetchKardRequest());
+
+  const newObj = {
+    [category]: array
+  };
+
+  const data = {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newObj)
+  };
+
+  fetch(`/api/kard/delete/${id}`, data).then(res => {
+    if(!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    return res.json();
+  }).then(kard => {
+    dispatch(fetchKardSuccess(kard[0]));
+  }).catch(err => {
+    dispatch(fetchKardError(err));
+  });
+
 };

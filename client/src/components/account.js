@@ -1,12 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../actions/kard';
 
 import './account.css';
 
 export class Account extends React.Component {
+  handleDelete(type, index) {
+    const newArray = this.props.kard[type].slice();
+    newArray.splice(index, 1);
+    this.props.dispatch(actions.removeItem(newArray, this.props.kard._id, type));
+    //this is a hack
+    window.location.reload();
+  }
+
   render () {
-
-
     const data = this.props.kard.work.map((editcontent, index) => {
       return (
         <div className='account' key={'work' + index}>
@@ -18,7 +25,7 @@ export class Account extends React.Component {
               {editcontent.content}
             </p>
             <button><img src='../edit2.svg.png' /></button>
-            <button><img src='../delete.png' /></button>
+            <button onClick={() => this.handleDelete('work', index)}><img src='../delete.png' /></button>
           </li>
         </div>
       );
@@ -34,7 +41,7 @@ export class Account extends React.Component {
               {editcontent.content}
             </p>
             <button><img src='../edit2.svg.png' /></button>
-            <button><img src='../delete.png' /></button>
+            <button onClick={() => this.handleDelete('social', index)}><img src='../delete.png' /></button>
           </li>
         </div>
       );
@@ -50,7 +57,7 @@ export class Account extends React.Component {
               {editcontent.content}
             </p>
             <button><img src='../edit2.svg.png' /></button>
-            <button><img src='../delete.png' /></button>
+            <button onClick={() => this.handleDelete('contact', index)}><img src='../delete.png' /></button>
           </li>
         </div>
       );
