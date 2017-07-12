@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import KardForm from './KardForm';
 import Account from './account';
@@ -17,12 +17,14 @@ export class Kard extends React.Component {
 
   render() {
     return (
-      <div>
-        <NavBar />
-        <Route exact path='/' component={KardForm} />
-        <Route exact path='/account/' component={Account} />
-        <Route exact path='/add-item/' component={AddItem} />
-      </div>
+      <Router>
+        <div>
+          <NavBar />
+          <Route exact path='/' component={KardForm} />
+          <Route exact path='/account/' component={Account} />
+          <Route exact path='/add-item/' component={AddItem} />
+        </div>
+      </Router>
     );
   }
 }
