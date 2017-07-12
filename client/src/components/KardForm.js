@@ -37,9 +37,11 @@ export default class KardForm extends React.Component {
             </label>
             <input type='text' id='send-input' placeholder='Email address' />
 
-            <CheckboxContainer type='contact' onChange={(event) => this.handleInputChange(event)} />
-            <CheckboxContainer type='social' onChange={(event) => this.handleInputChange(event)} />
-            <CheckboxContainer type='work' onChange={(event) => this.handleInputChange(event)} />
+            <div className='checkbox-container-container'>
+              <CheckboxContainer type='contact' onChange={(event) => this.handleInputChange(event)} />
+              <CheckboxContainer type='social' onChange={(event) => this.handleInputChange(event)} />
+              <CheckboxContainer type='work' onChange={(event) => this.handleInputChange(event)} />
+            </div>
 
             <button type='submit' className='send-button'>
               <a

@@ -39,6 +39,11 @@
   align-items: center;
 }
 
+.checkbox-container-container {
+  height: 200px;
+  overflow-y: auto;
+}
+
 .send-button {
   height: 50px;
   width: 100%;

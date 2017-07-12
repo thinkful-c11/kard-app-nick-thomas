@@ -46,10 +46,11 @@ export class AddItem extends React.Component {
         <form className='addForm' onSubmit={() => this.handleSubmit()}>
           <fieldset>
             <select onChange={(event) => this.handleChange(event)}>
-              <option value="work">Work</option>
-              <option value="social">Social</option>
-              <option value="contact">Contact</option>
-            </select> 
+              <option value='' disabled selected>Select One</option>
+              <option value='work'>Work</option>
+              <option value='social'>Social</option>
+              <option value='contact'>Contact</option>
+            </select>
             <label htmlFor='title-input'>
               Title here:
             </label>
