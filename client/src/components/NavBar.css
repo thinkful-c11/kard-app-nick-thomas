@@ -13,3 +13,8 @@ a {
   padding: 15px;
   text-decoration: none;
 }
+
+.send-icon {
+  height: 32px;
+  width: 32px;
+}

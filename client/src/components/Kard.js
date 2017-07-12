@@ -19,7 +19,7 @@ export class Kard extends React.Component {
     return (
       <Router>
         <div>
-          <NavBar />
+          <Route path='/*' component={NavBar} />
           <Route exact path='/' component={KardForm} />
           <Route exact path='/account/' component={Account} />
           <Route exact path='/add-item/' component={AddItem} />
