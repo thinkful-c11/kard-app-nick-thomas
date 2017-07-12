@@ -28,3 +28,31 @@ export const fetchKard = () => dispatch => {
     dispatch(fetchKardError(err));
   });
 };
+
+export const addItem = (type, content, id) => dispatch => {
+  dispatch(fetchKardRequest());
+  const newObj = {
+    work: {
+      type, content
+    }
+  };
+  const data = {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newObj)
+  };
+
+  fetch(`/api/kard/update/${id}`, data).then(res => {
+    if(!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+    return res.json();
+  }).then(kard => {
+    dispatch(fetchKardSuccess(kard[0]));
+  }).catch(err => {
+    dispatch(fetchKardError(err));
+  });
+};
