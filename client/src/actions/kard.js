@@ -29,13 +29,14 @@ export const fetchKard = () => dispatch => {
   });
 };
 
-export const addItem = (type, content, id) => dispatch => {
+export const addItem = (category, type, content, id) => dispatch => {
   dispatch(fetchKardRequest());
   const newObj = {
-    work: {
+    [category]: {
       type, content
     }
   };
+  console.log(newObj);
   const data = {
     method: 'PUT',
     headers: {

@@ -9,6 +9,7 @@ export class AddItem extends React.Component {
     super(props);
 
     this.state = {
+      categoryValue: '',
       titleValue: '',
       contentValue: ''
     };
@@ -19,16 +20,21 @@ export class AddItem extends React.Component {
       this.setState({
         titleValue: event.target.value
       });
-    } else {
+    } else if (event.target.name === 'content') {
       this.setState({
         contentValue: event.target.value
+      });
+    } else {
+      this.setState({
+        categoryValue: event.target.value
       });
     }
   }
 
   handleSubmit() {
-    this.props.dispatch(actions.addItem(this.state.titleValue, this.state.contentValue, this.props.kard._id));
+    this.props.dispatch(actions.addItem(this.state.categoryValue, this.state.titleValue, this.state.contentValue, this.props.kard._id));
     this.setState({
+      categoryValue: '',
       titleValue: '',
       contentValue: ''
     });
@@ -39,6 +45,11 @@ export class AddItem extends React.Component {
       <div className='addItem'>
         <form className='addForm' onSubmit={() => this.handleSubmit()}>
           <fieldset>
+            <select onChange={(event) => this.handleChange(event)}>
+              <option value="work">Work</option>
+              <option value="social">Social</option>
+              <option value="contact">Contact</option>
+            </select> 
             <label htmlFor='title-input'>
               Title here:
             </label>
