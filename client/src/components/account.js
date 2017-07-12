@@ -1,32 +1,55 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
 import './account.css'
 
-export default class Account extends React.Component {
+export class Account extends React.Component {
   render () {
-    return (
-    <div class="account">
-        <form className="accountForm">
-            <label htmlFor='firstName-input'>
-              First Name:
-            </label>
-            <input type="text" name="firstname" value="First name here" />
-            <label htmlFor='lastName-input'>
-              Last Name:
-            </label>
-            <input type="text" name="lastname" value="Last name here" />
-               <label htmlFor='userName-input'>
-             UserName:
-            </label>
-            <input type="text" name="username" value="Username here" />
-            <label htmlFor='password-input'>
-              Password:
-            </label>
-            <input type="text" name="password" value="Password here" />
-            
-            <input id="button" type="submit" value="Submit" />
-        </form> 
+
+
+    const data = this.props.kard.work.map((editcontent, index) => {
+     return (
+     <div className="account" key={'work' + index}>
+            <li>
+              {editcontent.type} <img src="../edit2.svg.png" /><img src="../delete.png" />
+            </li>
     </div>
+     )
+    });
+    const data2 = this.props.kard.social.map((editcontent, index) => {
+     return (
+     <div className="account" key={'social' + index}>
+            <li>
+              {editcontent.type} <img src="../edit2.svg.png" /><img src="../delete.png" />
+            </li>
+    </div>
+     )
+    });
+    const data3 =this.props.kard.contact.map((editcontent, index) => {
+     return (
+     <div className="account" key={'contact' + index}>
+            <li>
+              {editcontent.type} <img src="../edit2.svg.png" /><img src="../delete.png" />
+            </li>
+    </div>
+     )
+    });
+    return (
+      <div className='editContent'>
+        <ul>
+        {data}
+        {data2}
+        {data3}
+        </ul>
+      </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    kard: state.kard
+  };
+};
+
+export default connect(mapStateToProps)(Account);
