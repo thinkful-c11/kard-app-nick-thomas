@@ -51,7 +51,7 @@ export const addItem = (category, type, content, id) => dispatch => {
     }
     return res.json();
   }).then(kard => {
-    dispatch(fetchKardSuccess(kard[0]));
+    dispatch(fetchKardSuccess(kard));
   }).catch(err => {
     dispatch(fetchKardError(err));
   });
@@ -79,7 +79,7 @@ export const removeItem = (array, id, category) => dispatch => {
     }
     return res.json();
   }).then(kard => {
-    dispatch(fetchKardSuccess(kard[0]));
+    dispatch(fetchKardSuccess(kard));
   }).catch(err => {
     dispatch(fetchKardError(err));
   });

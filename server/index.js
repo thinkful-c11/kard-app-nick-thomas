@@ -64,13 +64,13 @@ app.put('/api/kard/update/:id', (req, res) => {
 
   const updated = {};
   const updateableFields = ['social', 'work', 'contact'];
-    updateableFields.forEach(field => {
-        if (field in req.body) {
-          updated[field] = req.body[field];
-      }
-    });
+  updateableFields.forEach(field => {
+    if (field in req.body) {
+      updated[field] = req.body[field];
+    }
+  });
 
-    Kard
+  Kard
     .findByIdAndUpdate(req.params.id, {$push: updated}, {new: true})
     .exec()
     .then(updatedKard => res.status(201).json(updatedKard))
@@ -91,16 +91,16 @@ app.put('/api/kard/delete/:id', (req, res) => {
 
   const updated = {};
   const updateableFields = ['social', 'work', 'contact'];
-    updateableFields.forEach(field => {
-        if (field in req.body) {
-          updated[field] = req.body[field];
-      }
-    });
+  updateableFields.forEach(field => {
+    if (field in req.body) {
+      updated[field] = req.body[field];
+    }
+  });
 
-    Kard
+  Kard
     .findByIdAndUpdate(req.params.id, {$set: updated}, {new: true})
     .exec()
-    .then(updatedKard => res.status(201).json(updatedKard))
+    .then(updatedKard => res.status(200).json(updatedKard))
     .catch(err => res.status(500).json({message: 'Something went wrong'}));
 });
 
