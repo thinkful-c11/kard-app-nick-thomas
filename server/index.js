@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const {PORT, DATABASE_URL} = require('./config');
 const { Kard } = require('./model');
 
+
+const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -116,7 +119,21 @@ app.delete('/api/kard/:id', (req,res) => {
   });
 });
 
+app.post('/api/kard/email', (req, res) => {
+  console.log(req.body);
+  const test = req.body.phoneNumber;
+  const data = {
+    from: 'Testing <me@sandbox53c9a52f9f8d43289b222b34423185e1.mailgun.org>',
+    to: `${req.body.email}`,
+    subject: 'Hello',
+    text: 'Testing some Mailgun awesomness!',
+    html: '<html><h1>DOES THIS WORK</h1><br><h2>Phone Number</h2><p>Please work</p></html>'
+  };
 
+  mailgun.messages().send(data, (error, body) => {
+    res.status(200).json(body);
+  });
+});
 
 
 

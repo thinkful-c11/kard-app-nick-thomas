@@ -85,3 +85,29 @@ export const removeItem = (array, id, category) => dispatch => {
   });
 
 };
+
+export const sendEmail = (emailBody) => dispatch => {
+  dispatch(fetchKardRequest());
+
+  const data = {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: emailBody
+  };
+
+  fetch('/api/kard/email', data).then(res => {
+    console.log(res);
+    if(!res.ok) {
+      return Promise.reject(res.statusText);
+    }
+
+    return res.json();
+  }).then(success => {
+    console.log(success);
+  }).catch(err => {
+    dispatch(fetchKardError(err));
+  });
+};

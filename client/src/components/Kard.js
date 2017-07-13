@@ -20,7 +20,7 @@ export class Kard extends React.Component {
       <Router>
         <div>
           <Route path='/*' component={NavBar} />
-          <Route exact path='/' component={KardForm} />
+          <Route exact path='/' render={() => <KardForm dispatchEmail={body => this.props.dispatch(actions.sendEmail(body))} />} />
           <Route exact path='/account/' component={Account} />
           <Route exact path='/add-item/' component={AddItem} />
         </div>
@@ -28,6 +28,7 @@ export class Kard extends React.Component {
     );
   }
 }
+
 
 const mapStateToProps = state => {
   return {
