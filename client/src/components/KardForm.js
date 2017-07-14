@@ -43,8 +43,8 @@ export default class KardForm extends React.Component {
     const email = Object.entries(this.state).toString().split(',');
     return (
       <div className='kard-form-container'>
-        <h1>Kard</h1>
-        {/* <img className='profile-img' src='http://fillmurray.com/200/200' alt='Profile' /> */}
+        {/* <h1>Kard</h1> */}
+        <img className='profile-img' src='./logo.png' alt='Profile' alt='Kard Logo' />
         <form className='kard-form' onSubmit={e => this.handleSubmit(e)}>
           <fieldset className='kard-fieldset'>
             <label className='input-label' htmlFor='send-input'>
