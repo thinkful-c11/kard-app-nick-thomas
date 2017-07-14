@@ -44,8 +44,8 @@ export class AddItem extends React.Component {
     return (
       <div className='addItem'>
         <form className='addForm' onSubmit={() => this.handleSubmit()}>
-          <fieldset>
-            <select onChange={(event) => this.handleChange(event)}>
+          <fieldset className='addForm-fieldset'>
+            <select onChange={(event) => this.handleChange(event)} required>
               <option value='' disabled selected>Select One</option>
               <option value='work'>Work</option>
               <option value='social'>Social</option>
