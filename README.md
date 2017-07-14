@@ -1,58 +1,68 @@
-# Thinkful Full Stack Template
+# Kard App
 
-A template for developing and deploying full stack JavaScript apps.
+![logo image](client/public/logo.png)
 
-## Getting started
+## the Application
 
-### Setting up a project
+Kard App is a handy way to send digital business cards, contact information, or social media profiles right from the web or your phone.
 
-* Move into your projects directory: `cd ~/YOUR_PROJECTS_DIRECTORY`
-* Clone this repository: `git clone https://github.com/Thinkful-Ed/full-stack-template YOUR_PROJECT_NAME`
-* Move into the project directory: `cd YOUR_PROJECT_NAME`
-* Install the dependencies: `npm install`
-* Create a new repo on GitHub: https://github.com/new
-    * Make sure the "Initialize this repository with a README" option is left **un**checked
-* Update the remote to point to your GitHub repository: `git remote set-url origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME`
+Imagine that you're at a social event, networking event, or even just at the bar or coffee shop. You meet someone and you want to exchange contact info or connect on social media. Instead of going through the hassle of filling out contact info on someone's phone or looking up social media handles, simply open up Kard App, enter the email of the person you want to send info to, and then select what info you want to send.
 
-### Working on the project
+Our current MVP is designed as a web app meant to be used on mobile, however, we have plans to port it to a true native app with React Native.
 
-* Move into the project directory: `cd ~/YOUR_PROJECTS_DIRECTORY/YOUR_PROJECT_NAME`
-* Run the development task: `npm run dev`
-    * Starts a server running at http://localhost:8080
-    * Automatically rebuilds when any of your files change
+## Screengrabs
 
-## Proxying
+From the home screen you can enter someone's email and choose what info to send them:
 
-In development, the full stack template works by proxying requests from port 8080 to the server or the client.  Any requests to routes which start with `/api/`, (for example, `/api/foo`, or `/api/foo/bar`) will be sent to the server.  All other requests, will serve the client.
+![Send Screen](demo/kard_app_send.png)
 
-*tl;dr* Make sure your API endpoints start with `/api`.
+You can add new profiles and information from the add item screen:
 
-## Installing dependencies
+![Add Screen](demo/kard_app_add.png)
 
-Client-side dependencies should be installed into the `client` directory:
+And from the edit screen you can update or remove info:
 
-```
-cd ~/YOUR_PROJECTS_DIRECTORY/YOUR_PROJECT_NAME/client
-npm install --save dependency-name
-```
+![Edit Screen](demo/kard_app_edit.png)
 
-Server-side dependencies should be installed into the `server` directory:
+## the Backend
 
-```
-cd ~/YOUR_PROJECTS_DIRECTORY/YOUR_PROJECT_NAME/server
-npm install --save dependency-name
-```
+Our backend is a simple, RESTful style API. All endpoints are prefixed by `/api/kard`.
 
-## Deployment
+Sending a GET request to `/api/kard` currently returns all Kards (which are essentially single user's complete profile). As the MVP is only set up with a single user's test data, the front end accounts for this and operates with whatever the first item in the database is.
 
-Requires the [Heroku CLI client](https://devcenter.heroku.com/articles/heroku-command-line).
+We have POST endpoint at `/api/kard` as well that allows for additional Kards (users) to be created. However, this functionality will be added in eventually to allow users to sign up and log in.
 
-### Setting up the project on Heroku
+A PUT request to `api/kard/insert/:id` takes an object in the format of: ```[category]:
+  {
+    type: 'Name of Media',
+    content: 'Content (URL, handle, etc)'
+  }```
+  where `[category]` is user selectable as `Social`, `Work`, or `Contact`.
 
-* Move into the project directory: `cd ~/YOUR_PROJECTS_DIRECTORY/YOUR_PROJECT_NAME`
-* Create the Heroku app: `heroku create PROJECT_NAME`
+A PUT request to `api/kard/update/:id` takes an object of the same form as the above but the value of each `[category]` is an array that corresponds to the array held in the database. It is used to delete and item, by passing the db array minus the deleted object, and to edit items, by passing the same array with the updated item.
 
-### Deploying to Heroku
+A DELETE endpoint also exists at `/api/kard/:id` for future use to delete a Kard (user account).
 
-* Push your code to Heroku: `git push heroku master`
+The final endpoint is a POST endpoint to `/api/kard/email`. This endpoint expects a request body in JSON that corresponds to the database category content. This is used by the front end when the user enters an email (which is also passed in the request body) and selects his or her information. This endpoint uses mailgun-js to access the Mailgun api and sends an email.
 
+## the Front End
+
+The front end is currently a straight up React application that proxies to the back end, allowing it to be deployed as a singe application with access to the back end api.
+
+## the Stack
+
+* **The Back End**
+  * Standard Mongo, Express, Node setup with the Mongo instance deployed on mLab and Mongoose used for modeling.
+  * [Mailgun](https://www.mailgun.com/) was used as our email API with [mailgun-js](https://www.npmjs.com/package/mailgun-js) used to run it from node.
+  * Everything build in Node and deployed to Heroku.
+
+* **The Front End**
+  * All React/Redux on the front end with CSS designed in flexbox (to make porting to React Native easier).
+
+* **Next Steps**
+  * Consider adding Twilio API to send SMS messages as well as email.
+  * Port the project to React Native.
+  * Revamp CSS and overall design.
+  * Expand database to hold more complex information.
+  * Add authentication and login.
+  * Format HTML email that is sent to users. 
