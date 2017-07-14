@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const { PORT, DATABASE_URL, DOMAIN, API_KEY } = require('./config');
 const { Kard } = require('./model');
 
-
 const mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 
 const app = express();
