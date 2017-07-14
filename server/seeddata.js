@@ -3,35 +3,52 @@ const mongoose = require('mongoose');
 const {DATABASE_URL} = require('./config');
 
 const userToCreate = {
-  userName: 'StevePerry',
+  userName: 'PBateman',
   password: 'password',
-  firstName: 'Steve',
-  lastName: 'Perry',
+  firstName: 'Patrick',
+  lastName: 'Bateman',
   contact: [
     {
       type: 'Email',
-      content: 'steve@steveperry.com'
+      content: 'pbateman@pierceandpierce.com'
     },
     {
-      type: 'phoneNumber',
-      content: '5555555555'
+      type: 'Phone Number',
+      content: '2125556342'
+    },
+    {
+      type: 'Address',
+      content: 'Pierce & Pierce 358 Exchange Place New York, N.Y.'
     }
   ],
   social: [
     {
       type: 'Facebook',
-      content: 'facebook.com/steve.perry'
+      content: 'facebook.com/patrick.bateman'
     },
     {
       type: 'Instagram',
-      content: '@steveperry'
+      content: '@patrickbateman'
+    },
+    {
+      type: 'Twitter',
+      content: '@patrickbateman'
     }
   ],
   work: [
     {
       type: 'LinkedIn',
-      content: 'linkedIn.com/steve.perry'
+      content: 'linkedIn.com/patrick.bateman'
+    },
+    {
+      type: 'Personal Website',
+      content: 'patrickbateman.com'
+    },
+    {
+      type: 'Github',
+      content: 'github.com/patrickbateman'
     }
+
   ]
 };
 
