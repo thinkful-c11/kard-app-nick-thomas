@@ -1,5 +1,11 @@
-.editContent {
+img {
+  height: 32px;
+  width: 32px;
+  margin-right: 20px;
 
+}
+
+.editContent {
   height: 500px;
   overflow-y: auto;
   border: 1px solid black;
@@ -10,15 +16,11 @@
 }
 
 .account {
-
  list-style-type: none;
  padding: 20px;
  font-size: 20px;
 }
 
-img {
-  height: 32px;
-  width: 32px;
-  margin-right: 20px;
-
+.button-container {
+  display: flex;
 }

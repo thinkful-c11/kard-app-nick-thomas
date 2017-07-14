@@ -29,9 +29,12 @@ export class Account extends React.Component {
             </h3>
             <form onSubmit={(e) => this.handleSubmit(e, index, 'work')}>
               <input type='text' defaultValue={editcontent.content} />
-              <button type='submit'><img src='../edit2.svg.png' /></button>
+              <div className='button-container'>
+                <button type='submit'><img src='../edit2.svg.png' /></button>
+                <button onClick={() => this.handleDelete('work', index)}><img src='../delete.png' /></button>
+              </div>
             </form>
-            <button onClick={() => this.handleDelete('work', index)}><img src='../delete.png' /></button>
+
           </li>
         </div>
       );
@@ -46,8 +49,13 @@ export class Account extends React.Component {
             <p>
               {editcontent.content}
             </p>
-            <button><img src='../edit2.svg.png' /></button>
-            <button onClick={() => this.handleDelete('social', index)}><img src='../delete.png' /></button>
+            <form onSubmit={(e) => this.handleSubmit(e, index, 'work')}>
+              <input type='text' defaultValue={editcontent.content} />
+              <div className='button-container'>
+                <button type='submit'><img src='../edit2.svg.png' /></button>
+                <button onClick={() => this.handleDelete('work', index)}><img src='../delete.png' /></button>
+              </div>
+            </form>
           </li>
         </div>
       );
@@ -62,8 +70,13 @@ export class Account extends React.Component {
             <p>
               {editcontent.content}
             </p>
-            <button><img src='../edit2.svg.png' /></button>
-            <button onClick={() => this.handleDelete('contact', index)}><img src='../delete.png' /></button>
+            <form onSubmit={(e) => this.handleSubmit(e, index, 'work')}>
+              <input type='text' defaultValue={editcontent.content} />
+              <div className='button-container'>
+                <button type='submit'><img src='../edit2.svg.png' /></button>
+                <button onClick={() => this.handleDelete('work', index)}><img src='../delete.png' /></button>
+              </div>
+            </form>
           </li>
         </div>
       );
