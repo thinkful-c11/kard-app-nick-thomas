@@ -50,7 +50,7 @@ nav {
 
 .main-nav-container {
   height: 100%;
-  width: 100%;
+  width: 32%;
   flex-direction: column;
   align-items: flex-end;
 }
@@ -62,8 +62,12 @@ nav {
   background-color: white;
   display: flex;
   justify-content: flex-end;
+  border-bottom: 1px solid black;
 }
 
+.border-this {
+  border: 1px solid black;
+}
 
 
 .send-icon {
