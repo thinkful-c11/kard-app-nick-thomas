@@ -29,9 +29,9 @@ export default class NavBar extends React.Component {
 
         <nav id='main-nav' className={`main-nav ${hidden}`} >
           <ul className='main-nav-container'>
-            <li className='main-nav-link'><Link to={'/'}>Home</Link></li>
-            <li className='main-nav-link'><Link to={'/account/'}>Edit Items</Link></li>
-            <li className='main-nav-link'><Link to={'/add-item/'}>Add Item</Link></li>
+            <li className='main-nav-link'><Link to={'/'} onClick={() => this.toggleNav()}>Home</Link></li>
+            <li className='main-nav-link'><Link to={'/account/'} onClick={() => this.toggleNav()}>Edit Items</Link></li>
+            <li className='main-nav-link'><Link to={'/add-item/'} onClick={() => this.toggleNav()}>Add Item</Link></li>
           </ul>
         </nav>
       </div>

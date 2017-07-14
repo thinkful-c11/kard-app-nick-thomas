@@ -15,9 +15,9 @@ nav {
   justify-content: space-between;
   align-content: center;
 }
-/*.hidden {
+.hidden {
   display: none !important;
-}*/
+}
 .nav-bar {
   /*height: 40px;*/
   display: flex;
@@ -57,7 +57,11 @@ nav {
 
 .main-nav-link {
   padding-top: 20px;
+  padding-right: 20px;
   flex-grow: 1;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
 }
 
 
