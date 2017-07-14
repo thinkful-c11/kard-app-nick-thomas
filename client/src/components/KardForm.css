@@ -4,15 +4,48 @@
   align-items: center;
   text-align: center;
   font-size: 18px;
-  padding: 10px 0 40px 0;
+  padding: 10px 0 0 0;
+  height: 84vh;
+}
+
+.kard-form {
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kard-fieldset {
+  border: none;
+  height: 100%;
+  width: 90%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-container-container {
+  height: 270px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-label {
+  margin-left: 28px;
 }
 
 #send-input {
+  margin-left: 28px;
   border: 1px solid black;
   border-radius: 2px;
   height: 30px;
-  width: 100%;
-  margin: 20px 0;
 }
 
 .check-container {
@@ -25,23 +58,6 @@
   border-radius: 50%;
   width: 200px;
   height: 200px;
-}
-
-.kard-form {
-  padding-top: 20px;
-}
-
-.kard-fieldset {
-  border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.checkbox-container-container {
-  height: 200px;
-  overflow-y: auto;
 }
 
 .send-button {

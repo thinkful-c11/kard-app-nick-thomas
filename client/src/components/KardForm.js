@@ -44,10 +44,10 @@ export default class KardForm extends React.Component {
     return (
       <div className='kard-form-container'>
         <h1>Kard</h1>
-        <img className='profile-img' src='http://fillmurray.com/200/200' alt='Profile' />
+        {/* <img className='profile-img' src='http://fillmurray.com/200/200' alt='Profile' /> */}
         <form className='kard-form' onSubmit={e => this.handleSubmit(e)}>
           <fieldset className='kard-fieldset'>
-            <label htmlFor='send-input'>
+            <label className='input-label' htmlFor='send-input'>
               Who would you like to send a Kard to?
             </label>
             <input type='text' id='send-input' name='email' placeholder='Email address' value={this.state.email} onChange={e => this.handleEmail(e)} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './KardForm.css';
+import './CheckboxContainer.css';
 
 export class CheckboxContainer extends React.Component {
 
@@ -23,7 +23,7 @@ export class CheckboxContainer extends React.Component {
     const data = checkBoxes.map((checkBox, index) => {
       return (
         <div className='check-container' key={this.props.type + index}>
-          <input type='checkbox' id={checkBox.type} name={checkBox.type} onChange={e => this.props.onChange(e.currentTarget)} value={checkBox.content} />
+          <input type='checkbox' className='check-input' id={checkBox.type} name={checkBox.type} onChange={e => this.props.onChange(e.currentTarget)} value={checkBox.content} />
           <label htmlFor={checkBox.type}>
             {checkBox.type}
           </label>
