@@ -46,9 +46,6 @@ export class Account extends React.Component {
             <h3>
               {editcontent.type}
             </h3>
-            <p>
-              {editcontent.content}
-            </p>
             <form onSubmit={(e) => this.handleSubmit(e, index, 'work')}>
               <input type='text' defaultValue={editcontent.content} />
               <div className='button-container'>
@@ -67,9 +64,6 @@ export class Account extends React.Component {
             <h3>
               {editcontent.type}
             </h3>
-            <p>
-              {editcontent.content}
-            </p>
             <form onSubmit={(e) => this.handleSubmit(e, index, 'work')}>
               <input type='text' defaultValue={editcontent.content} />
               <div className='button-container'>
