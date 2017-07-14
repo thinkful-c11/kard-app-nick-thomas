@@ -2,11 +2,11 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const {PORT, DATABASE_URL} = require('./config');
+const { PORT, DATABASE_URL, DOMAIN, API_KEY } = require('./config');
 const { Kard } = require('./model');
 
 
-const mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+const mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 
 const app = express();
 
