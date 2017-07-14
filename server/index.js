@@ -56,7 +56,7 @@ app.post('/api/kard', (req,res) => {
 
 
 
-app.put('/api/kard/update/:id', (req, res) => {
+app.put('/api/kard/insert/:id', (req, res) => {
 
   // if(!(req.params.id && req.body.id && req.params.id === req.body.id)) {
   //   res.status(400).json({
@@ -83,7 +83,7 @@ app.put('/api/kard/update/:id', (req, res) => {
 
 
 
-app.put('/api/kard/delete/:id', (req, res) => {
+app.put('/api/kard/update/:id', (req, res) => {
 
   // if(!(req.params.id && req.body.id && req.params.id === req.body.id)) {
   //   res.status(400).json({
